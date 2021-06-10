@@ -47,6 +47,9 @@ def get_cas_client(request):
     server_url = BASE_URLS.get(connector, LIBRARY_GMINVENT_BASE_URL)
 
     next_page = request.get_full_path()
+    # Strip ticket query string to avoid error in validate ticket
+    next_page = next_page.split("&ticket")[0]
+
     service_url = get_redirect_url(request, next_page)
 
     return CASClient(
