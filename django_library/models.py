@@ -13,7 +13,7 @@ class Library(models.Model):
         ("ARCHIMED", "Archimed"),
     ]
 
-    sso_id = models.CharField("Identifiant unique", max_length=20, unique=True)
+    sso_id = models.CharField("Identifiant unique", max_length=255, unique=True)
     name = models.CharField("Nom de la bibliothèque / médiathèque", max_length=255)
     ends_at = models.DateField("Date de fin d'abonnement", null=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
