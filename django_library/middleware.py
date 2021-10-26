@@ -41,9 +41,7 @@ class CASMiddleware:
 
             user = CASBackend.authenticate(request, sso_id=library_sso_id)
             if user:
-                login(
-                    request, user, backend="django_library.backends.CASBackend"
-                )
+                login(request, user, backend="django_library.backends.CASBackend")
                 request.session["library_user"] = True
 
                 if redirect:
