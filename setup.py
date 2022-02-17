@@ -1,8 +1,10 @@
 from setuptools import setup
 
+from django_library import __version__
+
 setup(
     name="django-library",
-    version="0.3.0",
+    version=__version__,
     description="Handle login and ticket validation for french library connectors (Archimed, GMInvent and C3RB)",
     url="https://github.com/briefmnews/django-library",
     author="Brief.me",
