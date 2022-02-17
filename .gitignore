@@ -3,7 +3,7 @@
 *.pyc
 .pytest_cache
 .tox/
-django_esidoc.egg-info
+django_library.egg-info
 
 #Tests coverage
 dist/
