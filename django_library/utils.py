@@ -46,6 +46,9 @@ def get_cas_client(request):
 
     server_url = BASE_URLS.get(connector, LIBRARY_GMINVENT_BASE_URL)
 
+    if connector == "ARCHIMED":
+        server_url.format(library_sso_id)
+
     next_page = request.get_full_path()
     # Strip ticket query string to avoid error in validate ticket
     next_page = next_page.split("&ticket")[0]
