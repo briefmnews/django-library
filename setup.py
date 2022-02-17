@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="django-library",
-    version="0.2.0",
+    version="0.3.0",
     description="Handle login and ticket validation for french library connectors (Archimed, GMInvent and C3RB)",
     url="https://github.com/briefmnews/django-library",
     author="Brief.me",
