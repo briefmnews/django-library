@@ -46,7 +46,7 @@ def get_cas_client(request):
 
     server_url = BASE_URLS.get(connector, LIBRARY_GMINVENT_BASE_URL)
 
-    if connector == "ARCHIMED":
+    if connector in ["ARCHIMED", "C3RB"]:
         server_url = server_url.format(library_sso_id)
 
 
