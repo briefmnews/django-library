@@ -73,10 +73,10 @@ the root path (i.e. `/`) as default value.
 
 ## How to use ?
 Once your all set up, when a request to your app is made with the query string 
-`sso_id=<unique_sso_id>`, the `CASMiddleware` catches the request and start the login process. 
+`library_sso_id=<unique_sso_id>`, the `CASMiddleware` catches the request and start the login process. 
 Here is an example of a request url to start the login process:
-```http request
-https://www.exemple.com/?sso_id=briefme
+```
+https://www.exemple.com/?library_sso_id=briefme
 ```
 
 ## Tests
