@@ -3,12 +3,11 @@ import logging
 from django.http import HttpResponseRedirect
 
 from django.conf import settings
-from django.contrib.auth import login
+from django.contrib.auth import login, authenticate
 
 from xml.etree import ElementTree
 from xml.etree.ElementTree import ParseError
 
-from .backends import CASBackend
 from .utils import get_cas_client
 from .models import Library
 
@@ -39,7 +38,7 @@ class CASMiddleware:
         if cas_ticket and request.session.get("is_library"):
             library_sso_id = self.validate_ticket(request, cas_ticket)
 
-            user = CASBackend.authenticate(request, sso_id=library_sso_id)
+            user = authenticate(request, sso_id=library_sso_id)
             if user:
                 login(request, user, backend="django_library.backends.CASBackend")
                 request.session["library_user"] = True
