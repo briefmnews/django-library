@@ -81,6 +81,7 @@ class CASMiddleware:
         """
 
         client = get_cas_client(request)
+        logger.info(f"Validating ticket: {cas_ticket}")
         response = client.get_verification_response(cas_ticket)
 
         logger.info(response)
